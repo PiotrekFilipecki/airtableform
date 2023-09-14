@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "airtable": "^0.12.2",
+    "framer-motion": "^10.16.4",
+    "joi": "^17.10.1",
     "next": "13.4.19",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.46.1",
+    "sass": "^1.67.0"
   },
   "devDependencies": {
     "eslint": "8.49.0",

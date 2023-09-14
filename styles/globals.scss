@@ -1,0 +1,85 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+  padding: 2rem;
+  width: 80vw;
+  color: #000000;
+  border-radius: 5px;
+
+  @media screen and (min-width: 1200px) {
+    width: 40vw;
+  }
+
+  .fieldWrapper {
+    width: 100%;
+    margin-bottom: 1rem;
+
+    &--inner {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        padding: 0.5rem 0.25rem;
+      }
+
+      textarea {
+        padding: 0.5rem 0.25rem;
+      }
+    }
+  }
+
+  .submit {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    background-color: #000000;
+    border: 1px solid #000000;
+    color: #ffffff;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ffffff;
+      color: #000000;
+    }
+  }
+}
