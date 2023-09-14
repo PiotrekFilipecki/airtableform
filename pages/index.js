@@ -51,7 +51,8 @@ export default function Home({submissions}) {
     });
 
     if (response.ok) {
-      // router.push('/offers/thanks');
+      router.push('/thankyou');
+      
     } else {
       const payload = await response.json();
       setFormProcessing(false);
