@@ -32,9 +32,11 @@ export default function Home({submissions}) {
     setFormProcessing(true);
     const form = new FormData(offerForm.current);
     const payload = {
-      name: form.get('name'),
+      firstName: form.get('name'),
       email: form.get('email'),
       message: form.get('message'),
+      phone: form.get('phone'),
+      code: form.get('code'),
 
     };
 
@@ -82,7 +84,7 @@ export default function Home({submissions}) {
 
               <div className="fieldWrapper">
                 <div className="fieldWrapper--inner">
-                  <label htmlFor="name">
+                  <label htmlFor="firstName">
                     Name
                   </label>
                   <input
@@ -102,6 +104,32 @@ export default function Home({submissions}) {
                     type="email"
                     id="email"
                     name="email"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="fieldWrapper">
+                <div className="fieldWrapper--inner">
+                  <label htmlFor="phone">
+                    Numer telefonu
+                  </label>
+                  <input
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="fieldWrapper">
+                <div className="fieldWrapper--inner">
+                  <label htmlFor="code">
+                    Kod z aplikacji
+                  </label>
+                  <input
+                    type="text"
+                    id="code"
+                    name="code"
                     required
                   />
                 </div>

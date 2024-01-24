@@ -2,9 +2,11 @@ import airDB from './airtableClient';
 import Joi from 'joi';
 
 const schema = Joi.object({
-  name: Joi.string().required(),
+  firstName: Joi.string().required(),
   email: Joi.string().email().required(),
   message: Joi.string().required(),
+  phone: Joi.string().required(),
+  code: Joi.string().required(),
 });
 
 const create = async (payload) => {
