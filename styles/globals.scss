@@ -43,7 +43,7 @@ h1,h2,h3,h4,h5, p {
 
 h1 {
   margin: 0;
-  font-size: 3rem;
+  font-size: 2.75rem;
   font-weight: 600;
   z-index: 1;
   color: #fffdfd;
@@ -76,7 +76,7 @@ margin-top: 6rem;
 }
 
 h2 {
-  font-size: 2.25rem;
+  font-size: 2.75rem;
   margin-bottom: 5rem;
   color: #fffdfd;
 letter-spacing: 2px;
@@ -244,6 +244,18 @@ header {
   display: none;
 }
 
+input[type=checkbox]{
+  accent-color:  #5f4681;  
+  }
+
+  .terms {
+    font-size: 12px !important;
+  }
+  label a {
+    color: #000;
+    font-weight: bold;
+  }
+
 .inp {
   margin-bottom: 0.85rem;
   width: 100%;
@@ -339,7 +351,7 @@ header {
 
 .sendform {
   width: 100%;
-  max-width: 280px;
+  max-width: 420px;
   padding: 0.75rem 0;
   font-family: inherit;
   font-size: 1.5rem;
@@ -348,6 +360,10 @@ header {
   cursor: pointer;
   border: 3px solid #000;
   transition: all 0.3s ease-in-out;
+
+  @media screen and (min-width:1024px) {
+    max-width: 50%;
+  }
   &:hover {
       background-color: transparent;
       color: black;
@@ -598,15 +614,36 @@ font-size: 1.4rem;
   margin-bottom: 2rem;
 }
 
+.mobileterms {
+  color: #fffdfd;
+  margin-right: 5%;
+  display: block;
+
+  @media screen and (min-width:993px) {
+    display: none;
+  }
+}
+
+.termslink {
+  display: none;
+
+  @media screen and (min-width:993px) {
+    display: block;
+  }
+}
 
 header nav {
+  width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   @media screen and (max-width:992px) {
       position: fixed;
   bottom: 0;
   width: 100%;
   display: flex;
-  font-size: 11px;
-  height: 30px;
+  font-size: 14px;
+  height: 40px;
   background-color: #fffdfd;
   color: #000;
   justify-content: space-around;
@@ -653,7 +690,7 @@ header nav {
         flex-direction: column;
         // background-color: $bg;
         // border: 2px solid $color;
-        padding: 1rem;
+        padding: 0.5rem;
         width: 80vw;
         // color: $color;
         font-size: 1.2rem;
@@ -666,6 +703,7 @@ header nav {
       
         @media screen and (min-width: 1200px) {
           width: 40vw;
+          padding: 1rem;
         }
       
         .fieldWrapper {
@@ -678,6 +716,7 @@ header nav {
       
             input {
               padding: 0.5rem 0.25rem;
+              font-size: 16px;
               font-family: inherit;
               width: 100%;
               padding: 0.75rem 0.25rem;

@@ -25,7 +25,8 @@ export default function Home({submissions}) {
   const formRef = useRef()
   const [message, setMessage] = useState(false)
 
-
+  const [isChecked, setIsChecked] = useState(false);
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
 
   const [formProcessing, setFormProcessing] = useState(false);
   const router = useRouter();
@@ -51,6 +52,19 @@ export default function Home({submissions}) {
 
 
   }, [])
+
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
+};
+
+// Validate checkbox on state change
+useEffect(() => {
+    if (isChecked) {
+        setIsSubmitDisabled(false);
+    } else {
+        setIsSubmitDisabled(true);
+    }
+}, [isChecked]);
 
   const animate = (timestamp) => {
     if(start === undefined){
@@ -105,7 +119,7 @@ export default function Home({submissions}) {
 
     };
 
-   
+
 
 
     
@@ -132,18 +146,13 @@ export default function Home({submissions}) {
     }
   };
 
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
 
-  // if (!loading && !session) {
-  //   return <div>Redirecting...</div>;
-  // }
   return (
     <div className={styles.container}>
       <Head>
         <title>Karnawał z noRUSH/RUSH</title>
         <meta name="description" content="Karnawał z noRUSH/RUSH" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
@@ -153,12 +162,13 @@ export default function Home({submissions}) {
           width={121}
           height={47}
           />
+          <a className='mobileterms' href="/regulamin.pdf" target="_blank">Regulamin</a>
           <nav>
             <a href="#nagrody">Nagrody</a>
             <a href="#zasady">Zasady</a>
             <a href="#wez-udzial">Weź udział</a>
             <a href="#kontakt">Kontakt</a>
-            <a href="/regulamin.pdf" target="_blank">Regulamin</a>
+            <a className="termslink" href="/regulamin.pdf" target="_blank">Regulamin</a>
           </nav>
         </header>
       <main className={styles.main}>
@@ -551,11 +561,19 @@ setMessage(false)
       ></textarea>
   </div>
 </div>
-
+<div className="fieldWrapper">
+                <input
+                    type="checkbox"
+                    checked={isChecked}
+                    onChange={handleCheckboxChange}
+                />
+                <label className="terms"> Akceptuję <a href="/regulamin.pdf" target="_blank">regulamin</a> i wyrażam zgodę na przetwarzanie moich danych.</label>
+            </div>
 
 <div className="fieldWrapper">
   <button
     // disabled={formProcessing}
+    disabled={isSubmitDisabled}
     className="submit sendform">
     
     {formProcessing ? <span className="loading">Wysyłam</span> : <span>Wyślij</span>}
