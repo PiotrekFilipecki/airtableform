@@ -141,7 +141,7 @@
   
   .norush1 {
     width: 100%;
-    max-width: 80px;
+    max-width: 150px;
     height: auto;
     position: absolute;
     left: 7.5%;
@@ -191,11 +191,11 @@
   
   .norush4 {
     width: 100%;
-    max-width: 80px;
+    max-width: 150px;
     height: auto;
     position: absolute;
     right: 7.5%;
-    top: 35%;
+    top: 30%;
     transform: rotate(10deg);
     //animation: customAni2 8s cubic-bezier(0.33, 1, 0.68, 1) 0s infinite normal none;
     @media screen and (min-width:1024px) {
